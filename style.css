@@ -1,0 +1,223 @@
+/* Variables de diseño */
+:root {
+    --primary: #000000;
+    --accent: #d4af37;
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+    --bg-light: #f9f9f9;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* Navegación / Logo */
+header {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+/* Sección Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    align-items: center;
+}
+
+.hero-content {
+    padding: 10% 12%;
+}
+
+.hero-image {
+    height: 100%;
+    background: #e0e0e0;
+    /* Reemplaza la URL de abajo con la ruta de tu imagen */
+    background-image: url('tu-imagen-modelo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+.tagline {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+}
+
+/* Botón Moderno */
+.btn {
+    display: inline-block;
+    padding: 18px 35px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Sección de Texto de Campaña */
+.campaign-section {
+    padding: 100px 10%;
+    background: white;
+    text-align: center;
+}
+
+.campaign-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: #444;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.footer-callout {
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+/* Sección de Portfolio de Videos */
+.portfolio-section {
+    padding: 80px 5%;
+    background-color: #000; /* Fondo negro para que los videos resalten */
+    color: white;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 9 / 16; /* Formato vertical tipo Reels/TikTok, cámbialo a 16/9 si son horizontales */
+    background: #1a1a1a;
+}
+
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.video-item:hover video {
+    transform: scale(1.05);
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-overlay span {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .hero-content {
+        padding: 60px 5%;
+        order: 2;
+    }
+    .hero-image {
+        height: 400px;
+        order: 1;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+}
